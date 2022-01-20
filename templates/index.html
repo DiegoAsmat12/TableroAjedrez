@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+    <title>Tablero De Ajedrez</title>
+
+</head>
+<body>
+    <main>
+        <h1 class="titulo" style="background-color: {{colorPar}}; color: {{colorImpar}}">*** Checkerboard ***</h1>
+        <div class="container">
+            {% for i in range(row):  %}
+                {% for j in range(column):  %}
+                    {% if (i+j)%2==0: %}
+                        <div class="box" style="background-color: {{colorPar}};"></div>
+                    {% else: %}
+                        <div class="box" style="background-color: {{colorImpar}};"></div>
+                    {% endif %}
+                {% endfor %}
+                <div class="line-break"></div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>
